@@ -1,17 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 /* font-family: 'Roboto', sans-serif; */
 :root {
-  --gray: #333233;
+  --gray: #414041;
   --white: #efefef;
+  --orange: #f79a64;
+  --lightGray: #696969;
+  --orangeShadow: #f79a648c;
+  --greenShadow: #40d6bd7a;
 }
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   text-align: center;
   color: var(--gray);
   text-transform: uppercase;
+  text-shadow: 0 0 5px var(--greenShadow);
 }
 
 h1 {
@@ -24,7 +30,7 @@ h3 {
 }
 
 html {
-  background: #018ded url(img/ocean.jpg);
+  background: #40d6bc url(img/ocean.jpg);
   height: 100vh;
   background-size: cover;
   text-align: center;
@@ -39,8 +45,10 @@ html {
   margin: 80px auto;
   position: relative;
   padding: 2rem;
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px var(--white),
-    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 10px var(--orangeShadow),
+    inset 0 0 10px var(--orangeShadow);
+  box-shadow: 0 0 10px var(--orangeShadow), inset 0 0 10px var(--orangeShadow);
+
   background: url(https://image.ibb.co/fLo2an/sasha_instagram_com_sanfrancisco_259980.jpg);
   background-size: cover;
 }
@@ -49,6 +57,8 @@ html {
   position: relative;
   width: 100%;
   height: 100%;
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
   transform: translateY(-3px); /* account for the height of the clock hands */
 }
 
@@ -58,4 +68,25 @@ html {
   background: var(--gray);
   position: absolute;
   top: 50%;
+  -webkit-transform-origin: 100%;
+  -ms-transform-origin: 100%;
+  transform-origin: 100%;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-box-shadow: 1px 1px 10px var(--gray);
+  box-shadow: 1px 1px 10px var(--gray);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  -o-transition-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  transition-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+}
+
+.hour-hand {
+  background: var(--orange);
+}
+.min-hand {
+  background: var(--lightGray);
 }
